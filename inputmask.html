@@ -3,17 +3,23 @@
 <head>
 	<meta charset="UTF-8">
 	<title></title>
-    <script src="http://a.tbcdn.cn/??s/kissy/1.1.6/seed-min.js,p/global/1.0/global-min.js,s/kissy/1.1.6/packages/core-min.js,s/yui/3.5.1/build/yui/yui-min.js"></script>
-    <script src="http://a.tbcdn.cn/??apps/et/common/js/trip-config-3.5.1-min.js"></script>
+    <script src="http://a.tbcdn.cn/??s/yui/3.7.3/build/yui/yui-min.js"></script>
+    <script src="http://a.tbcdn.cn/??apps/et/common/js/trip-config-3.7.3.js"></script>
     <script src="inputmask.js"></script>
     <link rel="stylesheet" href="inputmask.css" />
 </head>
 <body>
 
+<input id="J_inputMask" name="" type="text" class="text" placeholder="YYYY-MM-DD" data-spliter="-" />
+
 <script type="text/javascript">
 
     YTRIP.use('inputmask', function(Y) {
-        
+        var node = Y.one('#J_inputMask');
+        new Y.InputMask(node, {
+            type: 'fixed'
+            mask: '99/99/99'
+		});
     });
 
 </script>

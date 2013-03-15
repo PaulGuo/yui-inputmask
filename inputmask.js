@@ -9,49 +9,15 @@
 YUI.namespace('InputMask');
 YUI.add('inputmask', function(Y) {
 
-    function InputMask(userCONFIG) {
-        InputMask.superclass.constructor.apply(this, arguments);
+    function InputMask(node) {
+        this.initializer.apply(this, arguments);
     };
 
-    InputMask.NAME = 'inputmask';
-    InputMask.ATTRS = {};
-
-    Y.extend(InputMask, Y.Base, {
-        initializer: function(userCONFIG) {
-            var that = this;
-            var GUID = Y.guid();
-
-            var CONFIG = {
-                GUID: GUID,
-                SELF_UID: '#J_InputMask_' + GUID
-            };
-
-            CONFIG = Y.merge(CONFIG, userCONFIG);
-            that._updateCONFIG(CONFIG);
-        },
-
-        setConfig: function(CONFIG) {
-            var that = this;
-
-            return that._updateCONFIG(CONFIG);
-        },
-        
-        _updateCONFIG: function(CONFIG) {
-            var that = this;
-
-            Y.Object.each(CONFIG, function(o, i, r) {
-                that.set(i, o);
-            });
-
-            return that._getCONFIG();
-        },
-
-        _getCONFIG: function() {
-            var that = this;
-
-            return that.getAttrs();
+    InputMask.prototype = {
+        initializer: function(node) {
+            console.log(arguments);
         }
-    });
+    };
 
     Y.InputMask = InputMask;
 
